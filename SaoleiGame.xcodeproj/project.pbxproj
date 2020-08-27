@@ -14,7 +14,6 @@
 		EED99AE724F65B7E00A85180 /* GameLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED99AE624F65B7E00A85180 /* GameLevel.swift */; };
 		EED99AE924F65C1500A85180 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED99AE824F65C1500A85180 /* GameController.swift */; };
 		EED99AEE24F65DD500A85180 /* CountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED99AED24F65DD500A85180 /* CountView.swift */; };
-		EED99B0524F662A700A85180 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED99B0424F662A700A85180 /* GameView.swift */; };
 		EED99B1124F6648100A85180 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED99B1024F6648100A85180 /* GameState.swift */; };
 		EED99B1324F666DA00A85180 /* GameItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED99B1224F666DA00A85180 /* GameItem.swift */; };
 /* End PBXBuildFile section */
@@ -29,7 +28,6 @@
 		EED99AE624F65B7E00A85180 /* GameLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevel.swift; sourceTree = "<group>"; };
 		EED99AE824F65C1500A85180 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		EED99AED24F65DD500A85180 /* CountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountView.swift; sourceTree = "<group>"; };
-		EED99B0424F662A700A85180 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		EED99B1024F6648100A85180 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		EED99B1224F666DA00A85180 /* GameItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,7 +96,6 @@
 			children = (
 				EED99AED24F65DD500A85180 /* CountView.swift */,
 				EED99B1224F666DA00A85180 /* GameItem.swift */,
-				EED99B0424F662A700A85180 /* GameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,7 +176,6 @@
 				EED99AE524F65B0D00A85180 /* HomeController.swift in Sources */,
 				EED99AE924F65C1500A85180 /* GameController.swift in Sources */,
 				EED99AE724F65B7E00A85180 /* GameLevel.swift in Sources */,
-				EED99B0524F662A700A85180 /* GameView.swift in Sources */,
 				EED99AD124F65AF100A85180 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

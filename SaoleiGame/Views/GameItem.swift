@@ -15,10 +15,10 @@ enum GameItemType {
 }
 
 
-enum ItemState {
-    case normal // 普通
-    case flag   // 旗帜
-    case doubt  // 怀疑
+enum ItemState: Int {
+    case normal = 1 // 普通
+    case flag = 2  // 旗帜
+    case doubt = 3 // 怀疑
 }
 
 extension ItemState {
@@ -41,13 +41,6 @@ class GameItem: UIButton {
     var x: Int = 0
     var y: Int = 0
     
-    /// 状态
-    var itemState = ItemState.normal {
-        didSet {
-            updateState()
-        }
-    }
-    
     /// 对应的数字
     /// 0：空白
     /// 1 ~ 8：周围类数量
@@ -55,6 +48,13 @@ class GameItem: UIButton {
     var number: Int = 1 {
         didSet {
             updateNumber()
+        }
+    }
+    
+    /// 状态
+    var itemState = ItemState.normal {
+        didSet {
+            updateState()
         }
     }
     
