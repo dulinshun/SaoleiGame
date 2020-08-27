@@ -14,12 +14,56 @@ enum GameItemType {
     case number // 数字
 }
 
+
+enum ItemState {
+    case normal // 普通
+    case flag   // 旗帜
+    case doubt  // 怀疑
+}
+
+extension ItemState {
+    
+    var image: UIImage? {
+        switch self {
+        case .normal:
+            return UIImage(named: "tile_0_base")
+        case .flag:
+            return UIImage(named: "tile_0_d")
+        case .doubt:
+            return UIImage(named: "tile_0_q")
+        }
+    }
+}
+
 class GameItem: UIButton {
     
-    var number: Int = 1 { didSet { numberDidChanged() } }
+    /// 对应的位置
+    var x: Int = 0
+    var y: Int = 0
     
-    var type = ItemType.normal { didSet { ItemTypeDidChanged() } }
-
+    /// 状态
+    var itemState = ItemState.normal {
+        didSet {
+            updateState()
+        }
+    }
+    
+    /// 对应的数字
+    /// 0：空白
+    /// 1 ~ 8：周围类数量
+    /// 9：雷
+    var number: Int = 1 {
+        didSet {
+            updateNumber()
+        }
+    }
+    
+    /// 是否为失败的 item
+    var isFailureItem = false {
+        didSet {
+            setImage(UIImage(named: "item_failure"), for: .selected)
+        }
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -27,23 +71,27 @@ class GameItem: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        numberDidChanged()
-        ItemTypeDidChanged()
-        isSelected = true
+        updateState()
+        updateNumber()
     }
 }
 
 private extension GameItem {
     
-    func numberDidChanged() {
-        if number > 8 {
-            setImage(UIImage(named: "tile_0_b2"), for: .selected)
-        } else {
-            setImage(UIImage(named: "tile_0_\(number)"), for: .selected)
+    /// 更新状态
+    func updateState() {
+        switch itemState {
+        case .normal:
+            setImage(UIImage(named: "item_normal"), for: .normal)
+        case .flag:
+            setImage(UIImage(named: "item_flag"), for: .normal)
+        case .doubt:
+            setImage(UIImage(named: "item_doubt"), for: .normal)
         }
     }
     
-    func ItemTypeDidChanged() {
-        setImage(type.image, for: .normal)
+    /// 更新数字
+    func updateNumber() {
+        setImage(UIImage(named: "item_number_\(number)"), for: .selected)
     }
 }
