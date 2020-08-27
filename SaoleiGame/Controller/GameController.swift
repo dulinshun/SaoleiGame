@@ -100,6 +100,8 @@ class GameController: UIViewController {
     }
 }
 
+
+/// 雷的操作
 private extension GameController {
     
     /// 平铺按钮
@@ -265,6 +267,7 @@ private extension GameController {
     }
 }
 
+/// 计时操作
 private extension GameController {
     
     func startTimer() {
